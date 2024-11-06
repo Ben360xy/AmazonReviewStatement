@@ -1,17 +1,20 @@
 ﻿using AmazonReviewStatement;
 
 
-
+var review = @"this product is good but it gave my family cancer
+";
 
 //Load sample data
 var sampleData = new DumbAi.ModelInput()
 {
-    Review_text = @"Wow what a great game!",
+    Review_text = review,
 
 };
 
 //Load model and predict output
 var result = DumbAi.Predict(sampleData);
+
+Console.WriteLine("Review: " + review);
 
 Console.WriteLine("1 = Negative Review\n2 = Positive Review");
 
